@@ -1,15 +1,16 @@
 {
-  "name": "arbotmongo",
-  "version": "1.0.0",
-  "description": "Servicio REST que obtiene las lecturas de los dispositivos y las graba en la DB y provee un servicios que devuelve dichas lecturas",
-  "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "author": "",
-  "license": "ISC",
-  "dependencies": {
-    "express": "^4.17.1",
-    "mongoose": "^5.7.9"
-  }
+    "name": "arbotmongo",
+    "version": "1.0.0",
+    "description": "Servicio REST que obtiene las lecturas de los dispositivos y las graba en la DB y provee un servicios que devuelve dichas lecturas",
+    "main": "index.js",
+    "scripts": {
+        "start": "node server/server.js",
+        "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "author": "",
+    "license": "ISC",
+    "dependencies": {
+        "express": "^4.17.1",
+        "mongoose": "^5.7.9"
+    }
 }
