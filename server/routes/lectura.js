@@ -2,11 +2,12 @@ const express = require('express');
 const app = express();
 const Lectura = require('../models/lectura');
 
-app.get('/dispositivos', function(req, res) {
 
-    //console.log(req.query.dispositivo);
-    //let filtroDispositivo = '"nombre": "' + req.query.dispositivo + '"' || '';
-    //console.log(filtroDispositivo);
+/**
+ * Servicio que retorna todas las lecturas del dispositivo pasado por parametro y,
+ * en caso de no pasar ningun dispositivo retorna las lecturas de todos los dispositivos
+ */
+app.get('/lecturas', function(req, res) {
     if (req.query.dispositivo) {
         Lectura.find({ "nombre": req.query.dispositivo })
             .exec((err, lecturas) => {
@@ -39,5 +40,38 @@ app.get('/dispositivos', function(req, res) {
             })
     }
 });
+
+
+
+app.get('/ultimaLectura', function(req, res) {
+    if (req.query.dispositivo) {
+        Lectura.find({ "nombre": req.query.dispositivo })
+            .sort({ $natural: -1 })
+            .limit(1)
+            .exec((err, lecturas) => {
+                if (err) {
+                    return res.status(400).json({
+                        ok: false,
+                        err
+                    });
+                }
+
+                res.json({
+                    ok: true,
+                    lecturas
+                });
+            })
+    } else {
+
+        return res.status(400).json({
+            ok: false,
+            err: 'Debe pasar un dispositivo como parametro'
+        });
+    }
+
+
+});
+
+
 
 module.exports = app;
