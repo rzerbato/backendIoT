@@ -49,7 +49,7 @@ dynamodb.query(params, function(err, data) {
                 'humedad': item.Humedad.S,
                 'auditoria': fechaStr
             });
-            /*lectura.save((err, lecturaDB) => {
+            lectura.save((err, lecturaDB) => {
                 if (err) {
                     //Cambiamos el clg por una excepcion???
                     console.log(err);
@@ -57,7 +57,7 @@ dynamodb.query(params, function(err, data) {
                     console.log(lecturaDB);
                 }
 
-            });*/
+            });
             console.log(lectura);
         });
     }
