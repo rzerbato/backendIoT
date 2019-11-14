@@ -9,6 +9,8 @@ const Lectura = require('../models/lectura');
  */
 app.get('/lecturas', function(req, res) {
     if (req.query.dispositivo) {
+        console.log('aca1');
+
         Lectura.find({ "nombre": req.query.dispositivo })
             .exec((err, lecturas) => {
                 if (err) {
@@ -24,15 +26,20 @@ app.get('/lecturas', function(req, res) {
                 });
             })
     } else {
+        console.log('aca2');
+
         Lectura.find({})
             .exec((err, lecturas) => {
                 if (err) {
+                    console.log('aca3');
+
                     return res.status(400).json({
                         ok: false,
                         err
                     });
                 }
-
+                console.log('aca4');
+                console.log(lecturas);
                 res.json({
                     ok: true,
                     lecturas
