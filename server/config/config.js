@@ -19,5 +19,5 @@ if (process.env.NODE_ENV === 'dev') {
     urlDB = 'mongodb+srv://rzerbato:arc1030q@iot-px8ih.gcp.mongodb.net/test?retryWrites=true&w=majority'
 }
 
-
+//urlDB = 'mongodb+srv://rzerbato:arc1030q@iot-px8ih.gcp.mongodb.net/test?retryWrites=true&w=majority';
 process.env.URLDB = urlDB;
