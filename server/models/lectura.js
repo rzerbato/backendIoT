@@ -15,6 +15,10 @@ let lecturaSchema = new Schema({
         type: Number,
         required: false
     },
+    fecha: {
+        type: Number,
+        required: true
+    },
     auditoria: {
         type: Date,
         default: new Date()
