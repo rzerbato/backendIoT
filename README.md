@@ -1,3 +1,3 @@
 ## Backend IOT
 
-Aplicacion node que recupera datos de AES y los replica en una DB local y provee servicios para obtener los datos desde esta ultima
+Aplicacion node que recupera datos de AWS y los replica en una DB local. Además implementa una API REST
